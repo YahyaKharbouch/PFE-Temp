@@ -1,14 +1,23 @@
 <div class="container">
     <div class="navigation">
         <ul>
-            <li>
+            {{-- <li>
                 <a href="#">
                     <span class="icon">
                         <ion-icon name="happy-outline"></ion-icon>
                     </span>
                     <span class="title">Happy Smile</span>
                 </a> 
-            </li>
+            </li> --}}
+
+            {{-- <div class="logodent">
+                <span class="text">SMILE</span>
+                <span class="hover-text">SMILE</span>
+            </div> --}}
+
+            <div class="effect"> 
+                <p>ORALSPACE</p>
+            </div>
 
             <li>
                 <a href="{{  route('dashboardpage')  }}">
@@ -56,7 +65,7 @@
             </li>
 
             <li>
-                <a href="{{route('settingspage')}}">
+                <a href=" {{route('settingspage')}} ">
                     <span class="icon">
                         <ion-icon name="settings-outline"></ion-icon>
                     </span>    

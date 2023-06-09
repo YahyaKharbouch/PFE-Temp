@@ -105,7 +105,7 @@
 
                 <div>
                     <label class="form-label">Observations :</label>
-                    <textarea name="Observations" class="form-control" value="{{ old('Observations', $patient->Observations) }}"></textarea>
+                    <textarea name="Observations" class="form-control" >{{ old('Observations', $patient->Observations) }}</textarea>
                 </div>
 
             </div>

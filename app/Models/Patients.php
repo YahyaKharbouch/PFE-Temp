@@ -41,7 +41,7 @@ class Patients extends Model
 
     public function traitements()
     {
-        return $this->belongsToMany(Traitement::class, 'patient_traitement', 'NumDoss', 'Num_Traitement');
+        return $this->belongsToMany(Traitement::class, 'patient_traitement', 'NumDoss', 'Num_Traitement')->withPivot('NumDoss', 'Num_Traitement');
     }
     
     // relation one to many (patient-paiement) 

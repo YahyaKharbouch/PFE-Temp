@@ -61,25 +61,37 @@ class PatientController extends Controller
 
         //  Stocker les fichiers dans la base de donnée
         $patient->fill($formFields)->save();
-        return to_route('patients.modifier', $patient->id)->with('success', 'Le Patient a été bien modifié ');
+        return to_route('patientspage')->with('success', 'Le Patient a été bien modifié ');
     }
 
     public function store(PatientRequest $request)
-    {
-        // Validation des données par PatientRequest :
-        $formFields = $request->validated();
+{   
+    $formFields = $request->validated();
+    
 
-        // Insertion des données dans la table patients :
+    Patients::create($formFields);
 
-        Patients::create($formFields);
+    return redirect()->route('patientspage')->with('success', 'Patient ajouté avec succès.');
+}
 
-        return redirect()
-            ->route('patientspage')
-            ->with('success', 'Patient ajouté avec succès.');
-    }
 
     public function export() 
     {
         return Excel::download(new PatientsExport, 'Patients.xlsx');
+    }
+
+
+    /*public function search(Request $request){
+
+       return $get_name = $request->search_name;
+    }   */
+    public function search(Request $request)
+    {
+        $searchName = $request->search_name;
+
+        // Effectuer la recherche dans la table Patients
+        $results = Patients::where('NomPat', $searchName)->get();
+
+        return view('Patients.search', compact('results'));
     }
 }

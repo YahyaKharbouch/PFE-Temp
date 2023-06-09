@@ -53,17 +53,7 @@
 
     <script src="{{ asset('js/dash.js') }}"></script>
     <script src="{{ asset('js/dark-mode.js') }}"></script>
-    <script>
-        document.getElementById('ajouterForm').addEventListener('submit', function(event) {
-          event.preventDefault(); // Empêche le formulaire de se soumettre normalement
-          alert('Le traitement a été ajouté avec succès!');
-          this.submit(); // Soumet le formulaire manuellement
-        });
-      </script>
-      
-   
-
-
+  
     <!-- ============= Ionic Icon ============= -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

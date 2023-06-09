@@ -8,18 +8,24 @@
             </ul>
         </x-alert>
     @endif
-    <form class="form-inputss" method="POST" action="{{ route('traitements.store') }}">
-        @csrf
+    <form class="form-inputss" method="POST" action="{{ route('traitements.update',$traitement) }}">
+        @csrf 
         <div class="prenom-box p-3">
             <h2> Modifier un Traitement : </h2>
         <div class="mb-3">
             <label class="form-label">Numéro de dossier</label>
-            <input type="number" name="NumDoss" class="form-control" placeholder="Numéro de dossier" value="{{ old('NumDoss',$traitement->NumDoss) }}">
+            <input type="number" name="NumDoss" class="form-control" placeholder="Numéro de dossier" value="{{ old('NumDoss',$traitement->patients->first()->NumDoss ) }}">
+            @error('NumDoss')
+                <div class="text-danger">{{ $message }}</div>
+            @enderror
         </div>
 
         <div class="mb-3">
             <label class="form-label">Date de traitement</label>
             <input type="date" name="DateTraitement" class="form-control" value="{{ old('DateTraitement',$traitement->DateTraitement) }}">
+            @error('DateTraitement')    
+                        <div class="text-danger">{{ $message }}</div>
+            @enderror
         </div>
 
         <div class="mb-1">
@@ -43,12 +49,18 @@
               <option value="Blanchiment" {{ old('Acte', $traitement->Acte) == 'Blanchiment' ? 'selected' : '' }}>Blanchiment</option>
               <option value="Orthodontie" {{ old('Acte', $traitement->Acte) == 'Orthodontie' ? 'selected' : '' }}>Orthodontie</option>
             </select>
+            @error('Acte')
+                <div class="text-danger">{{ $message }}</div>
+            @enderror
           </div>
           
 
         <div class="mb-3">
             <label class="form-label">Dent</label>
-            <input type="number" name="Dent" class="form-control" placeholder="Dent" value="{{ old('NumDoss',$traitement->NumDoss) }}">
+            <input type="number" name="Dent" class="form-control" placeholder="Dent" value="{{ old('NumDoss',$traitement->Dent) }}">
+            @error('Dent')
+                <div class="text-danger">{{ $message }}</div>
+            @enderror
         </div>
 
         <div class="my-4">

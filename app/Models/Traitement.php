@@ -14,11 +14,12 @@ class Traitement extends Model
 
     protected $fillable = ['DateTraitement', 'Acte', 'Dent', 'NumDoss'];
 
-
-    
-
-    public function patients()
+    public function patients(): BelongsToMany
     {
-        return $this->belongsToMany(Patients::class, 'patient_traitement', 'Num_Traitement', 'NumDoss');
+        return $this->belongsToMany(Patients::class, 'patient_traitement', 'Num_Traitement', 'NumDoss')
+            ->withPivot('NumDoss', 'Num_Traitement');
     }
+
+
+  
 }

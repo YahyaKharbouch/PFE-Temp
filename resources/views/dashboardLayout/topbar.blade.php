@@ -1,12 +1,14 @@
-<div class="topbar">
+    <div class="topbar">
     <div class="toggle">
         <ion-icon name="menu-outline"></ion-icon>
     </div>
     <div class="search">
-        <label>
-            <input type="text" placeholder="Search here" />
+        <form action="{{route('search')}}" method="GET">
+
+            <input type="text" placeholder="Search here" name="search_name"/>
             <ion-icon name="search-outline"></ion-icon>
-        </label>
+
+        <button type="submit" class="btn btn-primary"> Search </button></form>
     </div>
     <div class="dark-user-combu">
         <div class="dark">

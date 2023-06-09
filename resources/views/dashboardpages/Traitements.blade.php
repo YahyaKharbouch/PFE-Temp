@@ -29,12 +29,12 @@
                 <td>{{ $traitement->Dent }}</td>
                 <td class="text-center">
                     {{-- Les actions d'insertion,modification et suppression  --}}
-                    <form action="{{ route('traitements.modifier', $traitement->patients->first()->NumDoss) }}" method="GET"
+                    <form action="{{ route('traitements.modifier', $traitement->Num_Traitement) }}" method="GET"
                         style="display:inline">
                         @csrf
                         <button type="submit" class="btn btn-secondary btn-sm action-btn">Modifier</button>
                     </form>
-                    <form action="{{ route('traitements.supprimer', $traitement->patients->first()->NumDoss) }}" method="POST"
+                    <form action="{{ route('traitements.supprimer', $traitement->Num_Traitement) }}" method="POST"
                         style="display:inline">
                         @method('DELETE')
                         @csrf

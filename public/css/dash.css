@@ -655,3 +655,115 @@ form label {
 .label-acte {
   display: block;
 }
+
+
+
+
+
+
+
+
+/* .logodent{
+  position: relative;
+  font-size: 5rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  line-height:  80px;
+}
+
+.text{
+  color: transparent;
+  -webkit-text-stroke: 1px
+    rgba(255, 255, 255, 0.6);
+}
+
+
+.hover-text{
+  position: absolute;
+  inset: 0;
+  width: 0%;
+  color: linear-gradient( 109.6deg,  rgba(61,131,97,1) 11.2%, rgba(28,103,88,1) 91.1% );; 
+  overflow: hidden;
+  border-right: 6px solid linear-gradient( 109.6deg,  rgba(61,131,97,1) 11.2%, rgba(28,103,88,1) 91.1% );
+  transition: 0.5s ease-in-out;
+}
+
+.logodent:hover .hover-text {
+  width: 100%;
+  filter: drop-shadow(0 0 40px rgba(34, 193, 195, 1), rgba(253, 187, 45, 1));
+} */
+
+.effect {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.effect p {
+  background: linear-gradient(to right, #fdbb2d, #22c1c3);
+  
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  background-size: 500% auto;
+  animation: textShine 5s ease-in-out infinite alternate;
+  font-size: 40px; /* Adjust the font size as per your preference */
+  text-align: center;
+}
+
+
+@keyframes textShine {
+  0% {
+      background-position: 0% 50%;
+  }
+  100% {
+      background-position: 100% 50%;
+  }
+}
+
+/* ************ Dental chart   *************** */
+
+.tooth-chart {
+  /* display: inline-block; */
+  width: 50%; /* Adjust the width as needed */
+  /* box-sizing: border-box; Include padding and border in width calculation */
+}
+
+#Spots polygon,
+#Spots path {
+  -webkit-transition: fill 0.25s;
+  transition: fill 0.25s;
+}
+
+#Spots polygon:hover,
+#Spots polygon:active,
+#Spots path:hover,
+#Spots path:active {
+  fill: #dddddd !important;
+}
+
+
+
+
+
+.spots polygon, .spots path {
+  -webkit-transition: fill 0.25s;
+  transition: fill 0.25s;
+}
+
+.spots polygon:hover, .spots polygon:active, .spots path:hover, .spots path:active {
+  fill: #dddddd !important;
+}
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+
+
+.label-acte {
+  display: block;
+}
