@@ -105,7 +105,11 @@
 
                 <div>
                     <label class="form-label">Observations :</label>
+<<<<<<< HEAD
                     <textarea name="Observations" class="form-control" >{{ old('Observations', $patient->Observations) }}</textarea>
+=======
+                    <textarea name="Observations" class="form-control">{{ old('Observations', $patient->Observations) }}</textarea>
+>>>>>>> 431dff10dfc3fe4984aeebb51a36009be4a2b535
                 </div>
 
             </div>
@@ -113,7 +117,7 @@
 
 
             <div class="my-4">
-                <button type="submit" class="btn  profile-button">Ajouter</button>
+                <button type="submit" class="btn  profile-button">Modifier</button>
                 <a href="{{ route('patientspage') }}" class="btn btn-default">Retour</a>
             </div>
         </div>

@@ -8,8 +8,13 @@
             </ul>
         </x-alert>
     @endif
+<<<<<<< HEAD
     <form class="form-inputss" method="POST" action="{{ route('traitements.update',$traitement) }}">
         @csrf 
+=======
+    <form class="form-inputss" method="POST" action="{{ route('traitements.update',$traitement->Num_Traitement) }}">
+        @csrf
+>>>>>>> 431dff10dfc3fe4984aeebb51a36009be4a2b535
         <div class="prenom-box p-3">
             <h2> Modifier un Traitement : </h2>
         <div class="mb-3">
@@ -64,7 +69,7 @@
         </div>
 
         <div class="my-4">
-            <button type="submit" class="btn  profile-button">Ajouter</button>
+            <button type="submit" class="btn  profile-button">Modifier</button>
             <a href="{{ route('traitementpage') }}" class="btn btn-default">Retour</a>
         </div>
         </div>

@@ -40,9 +40,6 @@
                         @csrf
                         <button type="submit" class="btn btn-danger btn-sm action-btn">Supprimer</button>
                     </form>
-                    <a class="btn btn-warning btn-sm action-btn"
-                        href="{{ route('patients.Afficher',$traitement->patients->first()->NumDoss) }}" role="button">Afficher
-                        Plus</a>
                 </td>
             </tr>
         @endforeach

@@ -75,10 +75,18 @@ Route::get('/traitement',[TraitementController::class,'Traitindex'])->name('trai
 Route::get('/traitements/Ajouter',[TraitementController::class,'Ajouter'])->name('traitements.Ajouter');
 Route::post('/traitements/store',[TraitementController::class,'store'])->name('traitements.store');
 
+<<<<<<< HEAD
 Route::delete('/traitements/{id}',[TraitementController::class,'supprimer'])
 ->name('traitements.supprimer');
 
 Route::get('/traitements/modifier/{traitement}',[TraitementController::class,'modifier'])
+=======
+Route::delete('traitement/{traitement}', [TraitementController::class, 'supprimer'])
+->name('traitements.supprimer');
+
+
+Route::get('/traitements/{traitement}/modifier',[TraitementController::class,'modifier'])
+>>>>>>> 431dff10dfc3fe4984aeebb51a36009be4a2b535
 ->name('traitements.modifier');
 
 Route::post('/traitements/{traitement}',[TraitementController::class,'update'])

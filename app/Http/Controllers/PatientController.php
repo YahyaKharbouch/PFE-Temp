@@ -61,7 +61,12 @@ class PatientController extends Controller
 
         //  Stocker les fichiers dans la base de donnée
         $patient->fill($formFields)->save();
+<<<<<<< HEAD
         return to_route('patientspage')->with('success', 'Le Patient a été bien modifié ');
+=======
+        return to_route('patientspage', $patient->NumDoss)
+        ->with('success', 'Le Patient a été bien modifié ');
+>>>>>>> 431dff10dfc3fe4984aeebb51a36009be4a2b535
     }
 
     public function store(PatientRequest $request)

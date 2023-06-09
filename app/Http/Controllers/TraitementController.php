@@ -31,7 +31,11 @@ class TraitementController extends Controller
         $traitement->delete();
         return redirect()
             ->route('traitementpage')
+<<<<<<< HEAD
             ->with('success', 'Traitement a été bien supprimé ');
+=======
+            ->with('success', 'Le traitement a été bien supprimé ');
+>>>>>>> 431dff10dfc3fe4984aeebb51a36009be4a2b535
     }
 
 
@@ -44,38 +48,53 @@ class TraitementController extends Controller
     // {
     //     $formFields = $request->validated();
 
-    //     //  Stocker les fichiers dans la base de donnée
-    //     $traitement->fill($formFields)->save();
-    //     return to_route('traitements.modifier', $traitement->Num_Traitement)->with('success', 'Le Patient a été bien modifié ');
+    //     // Store the updated data in the database
+    //     $traitement->update($formFields);
+
+    //     return redirect()
+    //         ->route('traitementpage', $traitement->Num_Traitement)
+    //         ->with('success', 'Le traitement a été bien modifié ');
     // }
 
+<<<<<<< HEAD
     public function update(TraitementRequest $request, Traitement $traitement)
     {
         $formFields = $request->validated();
+=======
+>>>>>>> 431dff10dfc3fe4984aeebb51a36009be4a2b535
 
-        // Store the updated data in the database
-        $traitement->update($formFields);
+    public function update(TraitementRequest $request,Traitement $traitement)
+{
+    $formFields = $request->validated();
+    $traitement->update($formFields);
+    return redirect()
+        ->route('traitementpage', $traitement->Num_Traitement)
+        ->with('success', 'Le traitement a été bien modifié ');
+}
 
+<<<<<<< HEAD
         return redirect()
             ->route('traitementpage')
             ->with('success', 'Le traitement a été bien modifié ');
     }
+=======
+>>>>>>> 431dff10dfc3fe4984aeebb51a36009be4a2b535
 
     public function store(TraitementRequest $request)
     {
         // Validation des données par PatientRequest :
         $formFields = $request->validated();
+<<<<<<< HEAD
         
        
+=======
+>>>>>>> 431dff10dfc3fe4984aeebb51a36009be4a2b535
 
         // Insertion des données dans la table patients :
-
         Traitement::create($formFields);
 
         return redirect()
             ->route('traitementpage')
             ->with('success', ' Le traitement ajouté avec succès.');
     }
-
-    
 }
